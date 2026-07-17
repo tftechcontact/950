@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Page Title</title>
+<title> Page Title </title>
 <meta charset="UTF-8">
+  <!-- for mobile view -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 <style>
 body {
-  background-color: #7a828a; /* Medium grey page background */
+  background-color: #7a828a; 
   font-family: "Open Sans", "Lucida Sans", sans-serif;
   font-size: 17px; 
   padding: 0;
-  margin: 0; /* Cleared margin to allow full-width elements to touch screen edges */
+  margin: 0; /* so full-width elements touch the screen edge */
 }
 
 * {
@@ -31,7 +32,7 @@ body {
   background-color: transparent;
 }
 
-/* Full-width header with flexbox navbar aligning title and menu items vertically */
+/* with flexbox menu bar */
 .header {
   grid-area: header;
   background-color: #2c3e50;
@@ -39,7 +40,7 @@ body {
   padding: 20px 50px;
   display: flex;
   justify-content: space-between;
-  align-items: center; /* Aligns brand title and navigation links perfectly in the center */
+  align-items: center; 
   width: 100%;
 }
 
@@ -49,15 +50,14 @@ body {
 }
 
 h1 {
-  font-family: 'Oswald', sans-serif; /* Clean, professional corporate header font */
+  font-family: 'Oswald', sans-serif; 
   color: #ffffff;
-  font-size: 2.2rem;
+  font-size: 16px;
   margin: 0;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
-/* Middle-aligned horizontal nav bar style rules */
 .nav-bar {
   display: flex;
   align-items: center;
@@ -76,7 +76,6 @@ h1 {
   color: #cfbd9a;
 }
 
-/* Full-width Hero layout container stretch */
 .hero {
   grid-area: hero;
   background-color: #1a1a1a; 
@@ -104,19 +103,18 @@ h1 {
   line-height: 1.6;
 }
 
-/* Solid white, non-transparent central content container */
 .main {
   grid-area: main;
-  background-color: #ffffff; /* Solid, non-transparent background */
+  background-color: #ffffff; 
   border-radius: 6px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
   padding: 40px;
   display: flex;
   flex-direction: column;
   gap: 30px;
-  max-width: 1200px; /* Constrains readability on ultra-wide viewports */
-  margin: 40px auto; /* Centers the main block with space above and below */
-  width: calc(100% - 60px); /* Keeps margins on smaller screens */
+  max-width: 1200px; 
+  margin: 40px auto; /* to center the main block */
+  width: calc(100% - 60px); /*  for smaller screen margins */
 }
 
 .p-main {
@@ -133,7 +131,7 @@ h1 {
   width: 100%;
 }
 
-/* Left side unboxed text layout replaces the former box-one container */
+/* Left side text, in main container w/ bullet points */
 .unboxed-text-container {
   flex: 1.2;
 }
@@ -154,7 +152,7 @@ h1 {
   color: #2c3e50;
 }
 
-/* Right side contact information box container preserved */
+/* contact information box */
 .box-two {
   flex: 0.8;
   max-width: 440px;
@@ -186,15 +184,15 @@ h1 {
   background-color: #1a252f;
 }
 
-/* Fancy, shadow-bordered interactive carousel styles */
+/* shadow-border for image carousel */
 .carousel-container {
   position: relative;
   width: 100%;
   max-width: 800px;
   margin: 40px auto 20px auto;
-  border: 8px solid #2c3e50; /* Strong border outline */
+  border: 8px solid #2c3e50; /* for border outline */
   border-radius: 8px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); /* High-contrast dropdown shadow */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); /* heavy shadow */
   overflow: hidden;
   background-color: #1a1a1a;
 }
@@ -226,7 +224,7 @@ h1 {
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(44, 62, 80, 0.85); /* Deep semi-transparent overlay */
+  background: rgba(44, 62, 80, 0.85); /* overlay */
   color: #ffffff;
   padding: 20px;
   text-align: center;
@@ -245,7 +243,7 @@ h1 {
   margin: 0;
 }
 
-/* Interactive navigation button elements */
+
 .carousel-button {
   position: absolute;
   top: 50%;
@@ -278,7 +276,7 @@ h1 {
   right: 20px;
 }
 
-/* Full-width Footer layout container stretch */
+/* full width footer, spans width of the page */
 .footer {
   grid-area: footer;
   background-color: #2c3e50;
@@ -312,7 +310,7 @@ h1 {
     <div class="brand-container">
       <h1>Static</h1>
     </div>
-    <!-- Aligned navigational menu options -->
+    <!-- horizontal menu -->
     <div class="nav-bar">
       <a href="#" class="nav-link">Home</a>
       <a href="#" class="nav-link">Services</a>
@@ -323,8 +321,8 @@ h1 {
 
   <div class="hero">
     <div class="hero-title">Welcome!</div>
-    <div class="hero-subtitle">This is a good start.</div> 
-    <p>Helping small businesses and freelancers run a static website.</p>
+    <div class="hero-subtitle"> Make yourself at home. </div> 
+    <p> Helping . </p>
   </div>
 
   <div class="main">
@@ -353,17 +351,18 @@ h1 {
 
       <div class="box-two">
         <h3>Contact Information</h3> 
-        <p>Operating Hours: 9 am - 6 pm, M-Sat</p>
-        <p>Call at (513) 266-8720</p>
-        <a href="mailto:msbookit@gmail.com" target="_blank" class="email-button">Send Email</a>
+        <p> Hours: 9:00 am - 5:00 pm, Monday -Friday</p>
+        <p>Call at (513) 555-8720 </p>
+        <a href="mailto:@gmail.com" target="_blank" class="email-button">Send Email</a>
       </div> 
     </div>
 
-    <!-- Fancier carousel container with solid borders, drop shadows, navigation buttons, and text descriptions -->
+    <!-- image carousel w/ buttons and descriptions -->
     <div class="carousel-container">
       <button class="carousel-button prev" onclick="moveSlide(-1)">&#10094;</button>
       <button class="carousel-button next" onclick="moveSlide(1)">&#10095;</button>
-      
+
+      <!-- first img -->
       <div class="carousel-track">
         <div class="carousel-slide">
           <img src="962.jpg" alt="Service Showcase One">
@@ -372,11 +371,23 @@ h1 {
             <p>Reliable and straightforward setup for all major household appliances.</p>
           </div>
         </div>
+
+        <!-- second img -->
         <div class="carousel-slide">
           <img src="9611.jpg" alt="Service Showcase Two">
           <div class="carousel-caption">
             <h5>Expert Diagnostics</h5>
             <p>Identifying equipment issues up front with honest and transparent pricing structures.</p>
+
+
+      <!-- third img -->
+         <!--
+            <img src="962.jpg" alt="Service Showcase Three">
+             <div class="carousel-caption">
+              <h5>Expert Diagnostics</h5>
+              <p>Identifying equipment issues up front with honest and transparent pricing structures.</p> <img src="962.jpg" alt="Service Showcase Four">
+          -->
+          
           </div>
         </div>
       </div>
@@ -385,7 +396,7 @@ h1 {
 
   <div class="footer">
     <p>&copy; <b>NAME</b> 2026 All Rights Reserved.
-    &nbsp; <a href="https://instagram.com/mt1427wow" target="_blank"><img src="instaicon.png" alt="Instagram"></a>
+    &nbsp; <a href="https://instagram.com/" target="_blank"><img src="instaicon.png" alt="Instagram"></a>
     </p>
     <p>Terms of Service provided at checkout.</p> 
     <p><a href="mailto:someone@example.com">Send email</a></p>
@@ -393,7 +404,7 @@ h1 {
 
 </div>
 
-<!-- Carousel navigation control logic -->
+<!-- img carousel navigation control -->
 <script>
 let currentSlideIndex = 0;
 
@@ -402,12 +413,14 @@ function moveSlide(direction) {
   const slides = document.querySelectorAll('.carousel-slide');
   const totalSlides = slides.length;
 
-  // Calculate destination index wrapping around margins
+  // for wrapping around margins
   currentSlideIndex = (currentSlideIndex + direction + totalSlides) % totalSlides;
 
-  // Execute slide transition using CSS transform properties
+  // for slide transition 
   track.style.transform = `translateX(-${currentSlideIndex * 100}%)`;
 }
+  
 </script>
+  
 </body>
 </html>
