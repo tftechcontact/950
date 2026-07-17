@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+body {
+  background-color: #7a828a; /* Medium grey page background */
+  font-family: "Open Sans", "Lucida Sans", sans-serif;
+  font-size: 17px; 
+  padding: 0;
+  margin: 0; /* Cleared margin to allow full-width elements to touch screen edges */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.grid-container {
+  height: auto;
+  display: grid;
+  grid-template-rows: auto auto auto auto;
+  grid-template-columns: 1fr;
+  grid-template-areas: 
+    "header"
+    "hero"
+    "main"
+    "footer";
+  background-color: transparent;
+}
+
+/* Full-width header with flexbox navbar aligning title and menu items vertically */
+.header {
+  grid-area: header;
+  background-color: #2c3e50;
+  color: #ffffff;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Aligns brand title and navigation links perfectly in the center */
+  width: 100%;
+}
+
+.brand-container {
+  display: flex;
+  align-items: center;
+}
+
+h1 {
+  font-family: 'Oswald', sans-serif; /* Clean, professional corporate header font */
+  color: #ffffff;
+  font-size: 2.2rem;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Middle-aligned horizontal nav bar style rules */
+.nav-bar {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.nav-link {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: #cfbd9a;
+}
+
+/* Full-width Hero layout container stretch */
+.hero {
+  grid-area: hero;
+  background-color: #1a1a1a; 
+  color: #f4efe6;
+  text-align: center; 
+  border-bottom: 4px solid #cfbd9a;
+  padding: 50px 30px;
+  width: 100%;
+}
+
+.hero-title {
+  font-family: 'Oswald', sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #cfbd9a;
+  margin: 0 0 10px 0;
+  text-transform: uppercase;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  font-weight: 400;
+  max-width: 900px;
+  margin: 0 auto 15px auto;
+  line-height: 1.6;
+}
+
+/* Solid white, non-transparent central content container */
+.main {
+  grid-area: main;
+  background-color: #ffffff; /* Solid, non-transparent background */
+  border-radius: 6px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 1200px; /* Constrains readability on ultra-wide viewports */
+  margin: 40px auto; /* Centers the main block with space above and below */
+  width: calc(100% - 60px); /* Keeps margins on smaller screens */
+}
+
+.p-main {
+  color: #2c3e50;
+  line-height: 1.7;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  width: 100%;
+}
+
+/* Left side unboxed text layout replaces the former box-one container */
+.unboxed-text-container {
+  flex: 1.2;
+}
+
+.unboxed-text-container h2 {
+  font-family: 'Oswald', sans-serif;
+  margin-top: 0;
+  color: #2c3e50;
+}
+
+.unboxed-text-container ul {
+  margin-top: 15px;
+  padding-left: 20px;
+}
+
+.unboxed-text-container li {
+  margin-bottom: 10px;
+  color: #2c3e50;
+}
+
+/* Right side contact information box container preserved */
+.box-two {
+  flex: 0.8;
+  max-width: 440px;
+  padding: 25px;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  background-color: #f8fafc;
+}
+
+.box-two h3 {
+  font-family: 'Oswald', sans-serif;
+  margin-top: 0;
+  color: #2c3e50;
+}
+
+.email-button {
+  display: inline-block;
+  background-color: #2c3e50;
+  color: #ffffff !important;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 4px;
+  margin-top: 15px;
+  transition: background-color 0.2s;
+}
+
+.email-button:hover {
+  background-color: #1a252f;
+}
+
+/* Fancy, shadow-bordered interactive carousel styles */
+.carousel-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 40px auto 20px auto;
+  border: 8px solid #2c3e50; /* Strong border outline */
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); /* High-contrast dropdown shadow */
+  overflow: hidden;
+  background-color: #1a1a1a;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  width: 100%;
+}
+
+.carousel-slide {
+  min-width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+  display: block;
+}
+
+.carousel-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(44, 62, 80, 0.85); /* Deep semi-transparent overlay */
+  color: #ffffff;
+  padding: 20px;
+  text-align: center;
+}
+
+.carousel-caption h5 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.4rem;
+  margin: 0 0 5px 0;
+  text-transform: uppercase;
+  color: #cfbd9a;
+}
+
+.carousel-caption p {
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+/* Interactive navigation button elements */
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(44, 62, 80, 0.8);
+  color: #ffffff;
+  border: 2px solid #cfbd9a;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: all 0.2s ease;
+}
+
+.carousel-button:hover {
+  background-color: #2c3e50;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-button.prev {
+  left: 20px;
+}
+
+.carousel-button.next {
+  right: 20px;
+}
+
+/* Full-width Footer layout container stretch */
+.footer {
+  grid-area: footer;
+  background-color: #2c3e50;
+  color: #ffffff;
+  text-align: center;
+  padding: 40px 20px;
+  width: 100%;
+  margin: 0;
+  border-top: 4px solid #cfbd9a;
+}
+
+.footer a {
+  color: #cfbd9a;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.footer img {
+  vertical-align: middle;
+  margin-left: 5px;
+}
+</style>
+</head>
+<body>
+
+<div class="grid-container">
+  <div class="header">
+    <div class="brand-container">
+      <h1>Static</h1>
+    </div>
+    <!-- Aligned navigational menu options -->
+    <div class="nav-bar">
+      <a href="#" class="nav-link">Home</a>
+      <a href="#" class="nav-link">Services</a>
+      <a href="#" class="nav-link">About Us</a>
+      <a href="#" class="nav-link">Contact</a>
+    </div>
+  </div>
+
+  <div class="hero">
+    <div class="hero-title">Welcome!</div>
+    <div class="hero-subtitle">This is a good start.</div> 
+    <p>Helping small businesses and freelancers run a static website.</p>
+  </div>
+
+  <div class="main">
+    <div class="p-main">
+      <h2 style="font-family: 'Oswald', sans-serif; margin-top: 0;">About Our Agency</h2>
+      <p><b>Business Model:</b> Exclusive lead generation & appointment setting.<br>
+      <b>Focus:</b> On delivering vetted customers & appointments to reliable contractors.<br>
+      <b>Service Areas:</b> Operates Nationwide. Based in Cincinnati, Ohio.<br>
+      <b>Pricing Model:</b> Pay-Per-Lead, charged to the contractor (a flat lead fee, not a percentage of the total job earnings).<br>
+      <b>Best For:</b> Established residential contractors.<br>
+      <b>Benefits:</b> Affordable for small contractors and handymen.</p>
+      
+      <p>We want agency. We want a sense that we can influence the trajectory of our life. It's hard to have that when our money is being stolen right from under our noses. Scammers are running rampant these days. I want to help assist people in knowing what to look out for to avoid being scammed, and the vital precautions to take in order to have a sense of autonomy and security as an online user.</p> 
+    </div>
+
+    <!-- Flex container containing unboxed left-hand text next to right-hand contact box -->
+    <div class="flex-container">
+      <div class="unboxed-text-container">
+        <h2>Agent Ms. Dev</h2>
+        <p>Versatile and detail-oriented professional with a strong background in customer service, appointment setting, and freelance creative work.</p>
+        <ul>
+          <li>Certified Professional Development, Customer Care Skills and Telephone Etiquette Course, Alison: Online Courses, November 17, 2025.</li>
+          <li>Certified HTML Developer, W3Schools, Oct 2019.</li>  
+        </ul> 
+      </div>
+
+      <div class="box-two">
+        <h3>Contact Information</h3> 
+        <p>Operating Hours: 9 am - 6 pm, M-Sat</p>
+        <p>Call at (513) 266-8720</p>
+        <a href="mailto:msbookit@gmail.com" target="_blank" class="email-button">Send Email</a>
+      </div> 
+    </div>
+
+    <!-- Fancier carousel container with solid borders, drop shadows, navigation buttons, and text descriptions -->
+    <div class="carousel-container">
+      <button class="carousel-button prev" onclick="moveSlide(-1)">&#10094;</button>
+      <button class="carousel-button next" onclick="moveSlide(1)">&#10095;</button>
+      
+      <div class="carousel-track">
+        <div class="carousel-slide">
+          <img src="962.jpg" alt="Service Showcase One">
+          <div class="carousel-caption">
+            <h5>Appliance Installation</h5>
+            <p>Reliable and straightforward setup for all major household appliances.</p>
+          </div>
+        </div>
+        <div class="carousel-slide">
+          <img src="9611.jpg" alt="Service Showcase Two">
+          <div class="carousel-caption">
+            <h5>Expert Diagnostics</h5>
+            <p>Identifying equipment issues up front with honest and transparent pricing structures.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>&copy; <b>NAME</b> 2026 All Rights Reserved.
+    &nbsp; <a href="https://instagram.com/mt1427wow" target="_blank"><img src="instaicon.png" alt="Instagram"></a>
+    </p>
+    <p>Terms of Service provided at checkout.</p> 
+    <p><a href="mailto:someone@example.com">Send email</a></p>
+  </div>
+
+</div>
+
+<!-- Carousel navigation control logic -->
+<script>
+let currentSlideIndex = 0;
+
+function moveSlide(direction) {
+  const track = document.querySelector('.carousel-track');
+  const slides = document.querySelectorAll('.carousel-slide');
+  const totalSlides = slides.length;
+
+  // Calculate destination index wrapping around margins
+  currentSlideIndex = (currentSlideIndex + direction + totalSlides) % totalSlides;
+
+  // Execute slide transition using CSS transform properties
+  track.style.transform = `translateX(-${currentSlideIndex * 100}%)`;
+}
+</script>
+</body>
+</html>
